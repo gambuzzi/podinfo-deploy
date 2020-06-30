@@ -7,14 +7,9 @@ metadata:
     kubernetes.io/ingress.class: traefik
     traefik.frontend.rule.type: PathPrefixStrip
     certmanager.k8s.io/acme-challenge-type: http01
-    certmanager.k8s.io/issuer: letsencrypt-prod
-spec:
-  tls:
-    - secretName: ingress-certificate
-      hosts:
-      - training-user-1.training.weave.works
+spec: 
   rules:
-  - host: training-user-1.training.weave.works
+  - host: podinfo.minikube.local
     http:
       paths:
       - path: /podinfo
